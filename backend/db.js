@@ -10,7 +10,7 @@ const pool = new Pool({
     user: DB_USERNAME,
     password: DB_PASSWORD,
     host: "localhost",
-    port: 5432,
+    port: 5432, //this is bydefault port for Postgres
     database: "tododb"
 });
 
