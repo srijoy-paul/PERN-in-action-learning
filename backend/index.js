@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/api/v1", router);
 
 
-const PORT = 5173;
+const PORT = 5174;
 app.listen(PORT, () => {
     console.log(`server running on port number: ${PORT}`);
 })
