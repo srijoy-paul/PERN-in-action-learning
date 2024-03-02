@@ -28,7 +28,7 @@ function CreateTodo() {
         options
       );
       const data = await response.json();
-      console.log("Createtodo", data);
+      // console.log("Createtodo", data);
     } catch (error) {
       console.error(error.message);
     }
@@ -54,9 +54,6 @@ function CreateTodo() {
             mb: "12px",
             bgcolor: "#dcf2f1cf",
             color: "#7FC7D9",
-            // py: "0",
-            // px:"0"
-            // active: "outline:2px solid red",
           }}
           onChange={(e) => {
             setTitle(e.target.value);

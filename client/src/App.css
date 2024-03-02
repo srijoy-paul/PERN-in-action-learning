@@ -7,9 +7,14 @@
 
 #createTodoDescrip {
   padding: 10px 12px;
-  background-color: #242424;
+  background-color: #1f2544;
+  color: #9400ff;
 }
 
 #createBTN:hover {
-  background-color: #242424;
+  background-color: #1f2544;
+  color: #9400ff;
+}
+::-webkit-input-placeholder {
+  color: #9400ff;
 }
