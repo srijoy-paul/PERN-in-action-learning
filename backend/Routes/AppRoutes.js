@@ -5,9 +5,9 @@ const pool = require("../db");
 
 router.post("/createTodo", async (req, res) => {
     try {
-        const { title, descrip } = req.body;
-        console.log(title, descrip);
-        const newTodo = await pool.query("INSERT INTO todo(title,descrip) VALUES($1,$2) RETURNING *", [title, descrip]);
+        const { title, descrip, checked, edited } = req.body;
+        console.log(title, descrip, checked, edited);
+        const newTodo = await pool.query("INSERT INTO todo(title,descrip,checked,edited) VALUES($1,$2,$3,$4) RETURNING *", [title, descrip, checked, edited]);
         res.json(newTodo.rows[0]);
     } catch (err) {
         console.error(err.message);
@@ -16,7 +16,7 @@ router.post("/createTodo", async (req, res) => {
 
 router.get("/getTodos", async (req, res) => {
     try {
-        const allTodos = await pool.query("SELECT * FROM todo");
+        const allTodos = await pool.query("SELECT * FROM todo ORDER BY id ASC");
         // console.log(allTodos.rows);
         res.json(allTodos.rows);
     } catch (error) {
@@ -40,9 +40,9 @@ router.get("/getTodo/:id", async (req, res) => {
 router.put("/updateTodo/:id", async (req, res) => {
     try {
         const { id } = req.params;
-        const { title, descrip } = req.body;
+        const { title, descrip, checked, edited } = req.body;
 
-        const todo = pool.query("UPDATE todo SET title=$1, descrip=$2 WHERE id=$3", [title, descrip, id]);
+        const todo = pool.query("UPDATE todo SET title=$1, descrip=$2, checked=$3, edited=$4 WHERE id=$5", [title, descrip, checked, edited, id]);
 
         res.send(`${id} todo is updated`);
     } catch (error) {

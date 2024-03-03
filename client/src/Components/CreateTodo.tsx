@@ -20,6 +20,8 @@ function CreateTodo() {
         body: JSON.stringify({
           title: title,
           descrip: descrip,
+          checked: false,
+          edited: false,
         }),
       };
       // I and Priyanka decided to start and finish the aptitude part of our prep. studies. We have planned to to search the resources to learn or practice the topics from. So we have decided to follow some YouTube channels who teaches the topics or practice questions that were actually asked in the interview of companies.

@@ -1,7 +1,9 @@
-CREATE DATABASE tododb;
+-- CREATE DATABASE tododb;
 
 CREATE TABLE todo(
     id BIGSERIAL NOT NULL PRIMARY KEY,
     title VARCHAR(100) NOT NULL,
-    descrip VARCHAR(500) NOT NULL
+    descrip VARCHAR(500) NOT NULL,
+    checked BOOLEAN NOT NULL,
+    edited BOOLEAN NOT NULL
 );
